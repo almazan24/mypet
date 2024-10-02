@@ -1,0 +1,286 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f6f6f6;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.index-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    text-align: center;
+}
+
+.login-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-container:before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-color: #FF8A8A;
+    opacity: 0.05;
+    transform: rotate(45deg);
+    z-index: 0;
+}
+
+.login-container > * {
+    position: relative;
+    z-index: 1;
+}
+
+.register-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px; 
+    height: 90vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.register-container:before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-color: #FF8A8A;
+    opacity: 0.05;
+    transform: rotate(45deg);
+    z-index: 0;
+}
+
+.register-container > * {
+    position: relative;
+    z-index: 1;
+}
+
+.scrollable-content {
+    overflow-y: auto;
+    max-height: 75vh;
+}
+
+.logo {
+    width: 120px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 26px;
+    color: #FF8A8A;
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    text-align: left;
+    font-size: 15px;
+    color: #333;
+    margin: 10px 0 5px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px 15px;
+    margin: 5px 0 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    font-size: 14px;
+    transition: border 0.3s ease;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border: 1px solid #FF8A8A;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #FF8A8A;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 15px;
+}
+
+.btn:hover {
+    background-color: #ff6e6e;
+    transform: scale(1.05);
+}
+
+form {
+    text-align: left;
+}
+
+form button {
+    width: 100%;
+    font-weight: bold;
+}
+
+.index-container, .register-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.index-container:before, .register-container:before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-color: #FF8A8A;
+    opacity: 0.05;
+    transform: rotate(45deg);
+    z-index: 0;
+}
+
+.index-container > *, .register-container > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* CONTENEDORES DE VENTANA DATA Y FINDMYPET*/
+.data-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.data-container h1 {
+    font-size: 26px;
+    color: #FF8A8A;
+    margin-bottom: 20px;
+}
+
+.data-container p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.qr-code {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.qr-code h2 {
+    font-size: 20px;
+    color: #FF8A8A;
+    margin-bottom: 10px;
+}
+
+.qr-code img {
+    width: 150px;
+    height: 150px;
+}
+
+.found-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    text-align: center;
+}
+
+.found-container h1 {
+    font-size: 26px;
+    color: #FF8A8A;
+    margin-bottom: 20px;
+}
+
+.found-container p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.found-container .btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #FF8A8A;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.found-container .btn:hover {
+    background-color: #ff6e6e;
+    transform: scale(1.05);
+}
+
+@media (max-width: 480px) {
+    .register-container, .index-container {
+        padding: 20px;
+        height: auto;
+    }
+    h1 {
+        font-size: 22px;
+    }
+    .btn {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+    input, select {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+    .scrollable-content {
+        max-height: 70vh;
+    }
+}

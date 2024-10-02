@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Mascota</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="register-container">
+        <img class="logo" src="mypetlogo.png" alt="Logo" text-align= center>
+        <h1>Registrar tu mascota</h1>
+        <div class="scrollable-content">
+            <form>
+                <label for="owner-name">Nombre del dueño</label>
+                <input type="text" id="owner-name" name="owner-name">
+    
+                <label for="username">Usuario</label>
+                <input type="text" id="username" name="username">
+    
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email">
+    
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" name="password">
+    
+                <label for="phone">Número de teléfono</label>
+                <input type="tel" id="phone" name="phone">
+    
+                <label for="address">Dirección</label>
+                <input type="text" id="address" name="address">
+    
+                <label for="pet-name">Nombre de la mascota</label>
+                <input type="text" id="pet-name" name="pet-name">
+    
+                <label for="pet-type">Seleccionar tipo de mascota</label>
+                <select id="pet-type" name="pet-type">
+                    <option value="dog">Perro</option>
+                    <option value="cat">Gato</option>
+                    <option value="cat">Otro</option>
+                </select>
+    
+                <label for="breed">Raza</label>
+                <input type="text" id="breed" name="breed">
+    
+                <label for="color">Color</label>
+                <input type="text" id="color" name="color">
+    
+                <button class="btn" type="submit">Registrar</button>
+                <button class="btn" type="submit">Regresar al inicio</button>
+
+            </form>
+        </div>
+    </div>    
+    <script src="app.js"></script>
+</body>
+</html>
