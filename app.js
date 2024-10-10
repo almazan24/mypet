@@ -2,9 +2,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const registerForm = document.getElementById("registerForm");
     const loginForm = document.getElementById("loginForm");
 
+
     function registerPet(event) {
         event.preventDefault(); 
-
+        
         const ownerName = document.getElementById("ownerName").value;
         const username = document.getElementById("username").value;
         const email = document.getElementById("email").value;
@@ -15,6 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const petType = document.getElementById("petType").value;
         const petBreed = document.getElementById("petBreed").value;
         const petColor = document.getElementById("petColor").value;
+        const petDesc = document.getElementById("petDesc").value;
+
 
         const userData = {
             ownerName,
@@ -26,60 +29,67 @@ document.addEventListener("DOMContentLoaded", () => {
             petName,
             petType,
             petBreed,
-            petColor
+            petColor,
+            petDesc,
         };
         
         localStorage.setItem("userData", JSON.stringify(userData));
         
+
         window.location.href = "data.html"; 
     }
+
 
     function login(event) {
         event.preventDefault(); 
 
         const loginUsername = document.getElementById("loginUsername").value;
         const loginPassword = document.getElementById("loginPassword").value;
-        
         const savedUserData = JSON.parse(localStorage.getItem("userData"));
         
-
         if (savedUserData && loginUsername === savedUserData.username && loginPassword === savedUserData.password) {
-
             window.location.href = "data.html";
         } else {
             alert("Usuario o contraseña incorrectos.");
         }
     }
 
-
-    if (window.location.pathname.includes("data.html")) {
+    function displayData() {
         const savedUserData = JSON.parse(localStorage.getItem("userData"));
-
         if (savedUserData) {
-            const ownerInfo = `Dueño: ${savedUserData.ownerName} <br>
-                               Teléfono: ${savedUserData.phone} <br>
-                               Dirección: ${savedUserData.address}`;
-            const petInfo = `Nombre de la Mascota: ${savedUserData.petName} <br>
-                             Tipo: ${savedUserData.petType} <br>
-                             Raza: ${savedUserData.petBreed} <br>
-                             Color: ${savedUserData.petColor}`;
 
-            document.getElementById("ownerInfo").innerHTML = ownerInfo;
-            document.getElementById("petInfo").innerHTML = petInfo;
+            document.getElementById("ownerName").textContent = savedUserData.ownerName;
+            document.getElementById("email").textContent = savedUserData.email;
+            document.getElementById("phone").textContent = savedUserData.phone;
+            document.getElementById("address").textContent = savedUserData.address;
+            document.getElementById("petName").textContent = savedUserData.petName;
+            document.getElementById("petType").textContent = savedUserData.petType;
+            document.getElementById("petBreed").textContent = savedUserData.petBreed;
+            document.getElementById("petColor").textContent = savedUserData.petColor;
+            document.getElementById("petDesc").textContent = savedUserData.petDesc;
 
-
-            const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Dueño:%20${savedUserData.ownerName},%20Teléfono:%20${savedUserData.phone},%20Mascota:%20${savedUserData.petName}`;
-            document.getElementById("qrImage").src = qrCodeUrl;
+            const qrCodeElement = document.getElementById("qrCode");
+            const qrCodeData = `Dueño: ${savedUserData.ownerName}, Teléfono: ${savedUserData.phone}, Mascota: ${savedUserData.petName}`;
+            generateQRCode(qrCodeData, qrCodeElement);
         } else {
             alert("No hay datos disponibles.");
         }
+    }
+
+    function generateQRCode(text, element) {
+        const qrCodeImageUrl = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(text)}&size=150x150`;
+        element.src = qrCodeImageUrl;
+    }
+
+    if (window.location.pathname.includes("data.html")) {
+        displayData();
     }
 
 
     if (registerForm) {
         registerForm.addEventListener("submit", registerPet);
     }
-
+    
     if (loginForm) {
         loginForm.addEventListener("submit", login);
     }
