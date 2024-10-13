@@ -9,52 +9,50 @@
 </head>
 <body>
     <div class="register-container">
-        <img class="logo" src="mypetlogo.png" alt="Logo" text-align= center>
-        <h1>Registrar tu mascota</h1>
-        <div class="scrollable-content">
-            <form id="registerForm">
-                <label for="ownerName">Nombre del dueño</label>
-                <input type="text" id="ownerName" name="ownerName">
-                
-                <label for="username">Usuario</label>
-                <input type="text" id="username" name="username">
+        <h1>Registro de Mascota</h1>
+        <form id="registerForm">
+            <label for="ownerName">Nombre del dueño:</label>
+            <input type="text" id="ownerName" required>
             
-                <label for="email">Correo electrónico</label>
-                <input type="email" id="email" name="email">
-                
-                <label for="password">Contraseña</label>
-                <input type="password" id="password" name="password">
-            
-                <label for="phone">Número de teléfono</label>
-                <input type="tel" id="phone" name="phone">
-                
-                <label for="address">Dirección</label>
-                <input type="text" id="address" name="address">
-                
-                <label for="petName">Nombre de la mascota</label>
-                <input type="text" id="petName" name="petName">
-            
-                <label for="petType">Seleccionar tipo de mascota</label>
-                <select id="petType" name="petType">
-                    <option value="Perro">Perro</option>
-                    <option value="Gato">Gato</option>
-                    <option value="Otro">Otro</option>
-                </select>
-                
-                <label for="petBreed">Raza</label>
-                <input type="text" id="petBreed" name="petBreed">
-            
-                <label for="petColor">Color</label>
-                <input type="text" id="petColor" name="petColor">
+            <label for="username">Usuario:</label>
+            <input type="text" id="username" required>
 
-                <label for="petDesc">Descripción de la mascota:</label>
-                <input type="text" id="petDesc" name="petDesc">
-            
-                <button class="btn" type="submit">Registrar</button>
-            </form>
-        </div>
-    </div>    
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" required>
+
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" required>
+
+            <label for="phone">Teléfono:</label>
+            <input type="tel" id="phone" required>
+
+            <label for="address">Dirección:</label>
+            <input type="text" id="address" required>
+
+            <label for="petName">Nombre de la Mascota:</label>
+            <input type="text" id="petName" required>
+
+            <label for="petType">Tipo de Mascota:</label>
+            <input type="text" id="petType" required>
+
+            <label for="petBreed">Raza:</label>
+            <input type="text" id="petBreed" required>
+
+            <label for="petColor">Color:</label>
+            <input type="text" id="petColor" required>
+
+            <label for="petDesc">Descripción de la mascota:</label>
+            <input type="text" id="petDesc" required>
+
+            <label for="petImage">Foto de la Mascota:</label>
+            <input type="file" id="petImage" accept="image/*" required>
+
+            <button type="submit" class="btn">Registrar</button>
+            <button class="btn" type="button" onclick="window.location.href='index.html'">Regresar al inicio</button>
+
+        </form>
+    </div>
+
     <script src="app.js"></script>
 </body>
 </html>
-
