@@ -57,7 +57,7 @@ body {
     z-index: 1;
 }
 
-.register-container {
+/* .register-container {
     background-color: white;
     padding: 30px;
     border-radius: 15px;
@@ -68,10 +68,30 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow-y: auto; */
+.register-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+    height: 90vh;
+    overflow-y: auto; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     position: relative;
-    overflow: hidden;
     text-align: center;
+    scroll-behavior: smooth; 
 }
+
+.scrollable-content {
+    overflow-y: auto; 
+    max-height: 75vh; 
+    padding-right: 10px; 
+}
+
 
 .register-container:before {
     content: '';
@@ -182,7 +202,6 @@ form button {
     z-index: 1;
 }
 
-/* CONTENEDORES DE VENTANA DATA Y FINDMYPET*/
 .data-container {
     background-color: white;
     padding: 30px;
@@ -190,10 +209,10 @@ form button {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 450px;
-    height: auto;
+    height: 90vh;
     text-align: left;
     position: relative;
-    overflow: hidden;
+    overflow-y: auto;
 }
 
 .data-container h1 {
@@ -279,8 +298,5 @@ form button {
     input, select {
         padding: 8px 12px;
         font-size: 13px;
-    }
-    .scrollable-content {
-        max-height: 70vh;
     }
 }
